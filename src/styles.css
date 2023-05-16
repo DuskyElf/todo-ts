@@ -1,0 +1,38 @@
+body {
+    background-color: #1D202F;
+    color: white;
+    font-size: 25px;
+    font-family: "JetBrains Mono";
+}
+
+.header_title {
+    font-weight: bold;
+    color: #7aa2f7;
+    font-size: 30px;
+}
+
+.header_title ~ hr {
+    border: 1.5px dashed #7aa2f7;
+    width: 50%;
+    transform: translateX(-50%);
+}
+
+.navigator {
+    font-size: 28px;
+}
+
+.indicator {
+    font-weight: bold;
+    color: #F7768E;
+    transition: transform 0.25s;
+}
+
+.indicator-todo {
+    position: absolute;
+    transform: translateX(-13.75rem);
+}
+
+.indicator-done {
+    position: absolute;
+    transform: translateX(-6.5rem);
+}
