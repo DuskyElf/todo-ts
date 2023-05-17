@@ -12,7 +12,7 @@ const App: React.FC = () => {
     const [state, changeState] = React.useReducer(
         M.stateReducer, {
             curr_tab: "todo",
-            todo_list: ["first todo", "seconda todo"],
+            todo_list: ["first todo", "seconda todo", "third todo", "fourth todo"],
             todo_curs: 0,
             done_list: ["first done", "seconda done"],
             done_curs: 0,

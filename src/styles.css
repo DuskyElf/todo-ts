@@ -36,3 +36,18 @@ body {
     position: absolute;
     transform: translateX(-6.5rem);
 }
+
+.work-list {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.work-list li {
+    padding-left: 25px;
+    transition: 0.15s;
+}
+
+.work-list li.selected-list {
+    padding-left: 0px;
+    transition: 0.25s;
+}

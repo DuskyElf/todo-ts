@@ -14,12 +14,12 @@ const WorkList: React.FC<WorkListProp> = ({items, curr_index}) => {
                 return (
                     <li key={index} className={selected ? "selected-list": ""}>
                         {selected ? (
-                            <>
+                            <span className="selected">
                                 <span className="indicator">
                                     {"-> | "}
                                 </span>
                                 <span>{item}</span>
-                            </>)
+                            </span>)
                             : "| " + item
                         }
                     </li>
