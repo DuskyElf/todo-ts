@@ -21,10 +21,10 @@ const App: React.FC = () => {
 
     const keyinputHandler = (e: Event) => {
         if (e.type !== "keydown") return;
-        e.preventDefault()
 
         switch ((e as KeyboardEvent).key) {
             case 'Tab':
+                e.preventDefault()
                 changeState({type: "tabChange"})
                 break;
             case 'j':
