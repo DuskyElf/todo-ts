@@ -51,3 +51,16 @@ body {
     padding-left: 0px;
     transition: 0.25s;
 }
+
+.prompt {
+    color: #9ECE6A;
+}
+
+.todo-input {
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    width: 75%;
+    background-color: transparent;
+}

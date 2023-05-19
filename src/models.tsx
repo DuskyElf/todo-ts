@@ -10,11 +10,14 @@ export type State = {
     todo_curs: number,
     done_list: WorkListT,
     done_curs: number,
+    is_appending: boolean,
 }
 
 type tabChange_stateAction = { type: "tabChange" }
 type cursDown_stateAction = { type: "cursDown" }
 type cursUp_stateAction = { type: "cursUp" }
+type appendingTodo_stateAction = { type: "appendingTodo" }
+type appendTodo_stateAction = { type: "appendTodo", todo: string }
 
 function clamp(value: number, clamper: number): number {
     if (value < 0)
@@ -28,6 +31,8 @@ type stateAction =
     | tabChange_stateAction
     | cursDown_stateAction
     | cursUp_stateAction
+    | appendingTodo_stateAction
+    | appendTodo_stateAction
 export function stateReducer(state: State, action: stateAction): State {
     switch (action.type) {
         case "tabChange":
@@ -41,6 +46,10 @@ export function stateReducer(state: State, action: stateAction): State {
             if (state.curr_tab === "todo")
                 return {...state, todo_curs: clamp(state.todo_curs - 1, state.todo_list.length)}
             return {...state, done_curs: clamp(state.done_curs - 1, state.done_list.length)}
+        case "appendingTodo":
+            return {...state, is_appending: true}
+        case "appendTodo":
+            return {...state, todo_list: [...state.todo_list, action.todo], is_appending: false}
         default:
             return state;
     }
